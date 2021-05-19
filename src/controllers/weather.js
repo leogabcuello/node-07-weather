@@ -9,7 +9,7 @@ const Success = require('../handler/successHandler');
  * @param {express.Request} req 
  * @param {express.Response} res 
  */
-const weatherByCoordinates = async (req, res) => {
+const weatherByCoordinates = async (req, res, next) => {
 
     try {
         const {lon, lat} = req.query;
@@ -26,7 +26,7 @@ const weatherByCoordinates = async (req, res) => {
  * @param {express.Request} req 
  * @param {express.Response} res 
  */
-const weatherByCityId = async (req, res) => {
+const weatherByCityId = async (req, res, next) => {
 
     try {
         const {city, id} = req.params;
