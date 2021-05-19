@@ -10,7 +10,8 @@ class ExpressServer {
 
         this.app = express();
         this.port = config.port;
-        this.basePathUser = `${config.api.prefix}/users`;
+        this.basePathcity = `${config.api.prefix}/cities`;
+        this.basePathWeather = `${config.api.prefix}/weather`;
 
         this._middlewares();
         this._swaggerConfig();
@@ -39,7 +40,8 @@ class ExpressServer {
         this.app.head("/status", (req, res) => {
             res.status(200).end();
         }); 
-        this.app.use(this.basePathUser, require('../../router/users'));
+        this.app.use(this.basePathcity, require('../../router/cities'));
+        this.app.use(this.basePathWeather, require('../../router/weather'));
     }
     
 
